@@ -1,0 +1,110 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<package xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="packagedesc.xsd">
+	<name>13y00206</name>
+	<description>MDIS5 F14/F15/F17/F18/D601/SC14 board monitoring driver package</description>
+	<date>2009-08-31</date>
+	<revision>1.5</revision>
+	<docroot>DRIVERS/MDIS_LL/F14_MON/DOC/html/index.html</docroot>
+	<!-- Models -->
+	<modellist>
+		<model>
+			<hwname>F14_MON</hwname>
+			<modelname>F14_MON</modelname>
+			<description>F14/F15/F17/F18/D601 monitoring (PSU state, status LED)</description>
+			<devtype>MDIS</devtype>
+			<autoid/>
+			<busif>PCI</busif>
+			<settinglist>
+				<setting hidden="true">
+					<name>PCI_VENDOR_ID</name>
+					<type>U_INT32</type>
+					<defaultvalue>0x8086</defaultvalue>
+				</setting>
+				<setting hidden="true">
+					<name>PCI_DEVICE_ID</name>
+					<type>U_INT32</type>
+					<defaultvalue>0x2641</defaultvalue>
+				</setting>
+			</settinglist>
+			<swmodulelist>
+				<swmodule swap="false">
+					<name>f14_mon</name>
+					<description>F14_MON Driver</description>
+					<type>Low Level Driver</type>
+					<makefilepath>F14_MON/DRIVER/COM/driver.mak</makefilepath>
+				</swmodule>
+			</swmodulelist>
+		</model>
+		<model>
+      <hwname>F14_MON</hwname>
+      <modelname>F14_MON_WDOG</modelname>
+      <description>F14/F15/D601 monitoring for HW rev. 00.xx (watchdog, PSU state, status LED)</description>
+      <devtype>MDIS</devtype>
+      <autoid/>
+      <busif>PCI</busif>
+      <settinglist>
+        <setting hidden="true">
+          <name>PCI_VENDOR_ID</name>
+          <type>U_INT32</type>
+          <defaultvalue>0x8086</defaultvalue>
+        </setting>
+        <setting hidden="true">
+          <name>PCI_DEVICE_ID</name>
+          <type>U_INT32</type>
+          <defaultvalue>0x2641</defaultvalue>
+        </setting>
+      </settinglist>
+      <swmodulelist>
+        <swmodule swap="false">
+          <name>f14_mon_wdog</name>
+          <description>F14_MON Driver</description>
+          <type>Low Level Driver</type>
+          <makefilepath>F14_MON/DRIVER/COM/driver_wdog.mak</makefilepath>
+        </swmodule>
+      </swmodulelist>
+    </model>
+    <model>
+      <hwname>F14_MON_SC14</hwname>
+      <modelname>F14_MON_SC14</modelname>
+      <description>SC14 monitoring (watchdog)</description>
+      <devtype>MDIS</devtype>
+      <autoid/>
+      <busif>PCI</busif>
+      <settinglist>
+        <setting hidden="true">
+          <name>PCI_VENDOR_ID</name>
+          <type>U_INT32</type>
+          <defaultvalue>0x8086</defaultvalue>
+        </setting>
+        <setting hidden="true">
+          <name>PCI_DEVICE_ID</name>
+          <type>U_INT32</type>
+          <defaultvalue>0x2641</defaultvalue>
+        </setting>
+      </settinglist>
+      <swmodulelist>
+        <swmodule swap="false">
+          <name>f14_mon_sc14</name>
+          <description>F14_MON_SC14 Driver</description>
+          <type>Low Level Driver</type>
+          <makefilepath>F14_MON/DRIVER/COM/driver_sc14.mak</makefilepath>
+        </swmodule>
+      </swmodulelist>
+    </model>
+  </modellist>
+	<!-- Global software modules -->
+	<swmodulelist>
+		<swmodule>
+			<name>f14_mon_simp</name>
+			<description>Simple example program for the F14_MON driver</description>
+			<type>Driver Specific Tool</type>
+			<makefilepath>F14_MON/EXAMPLE/F14_MON_SIMP/COM/program.mak</makefilepath>
+		</swmodule>
+    <swmodule>
+      <name>wdog_test</name>
+      <description>Test program for Watchdog drivers</description>
+      <type>Common Tool</type>
+      <makefilepath>WDOG/WDOG_TEST/COM/program.mak</makefilepath>
+    </swmodule>
+  </swmodulelist>
+</package>
