@@ -12,24 +12,24 @@
  *
  *     \switches -
  */
- /*-------------------------------[ History ]--------------------------------
- *
- * $Log: f14_mon_doc.c,v $
- * Revision 1.4  2007/11/20 14:56:28  JWu
- * description fixed
- *
- * Revision 1.3  2007/11/12 10:05:02  JWu
- * Added support for F18
- *
- * Revision 1.2  2006/11/02 13:26:37  DPfeuffer
- * WDOG variant implemented
- *
- * Revision 1.1  2005/12/22 14:42:21  dpfeuffer
- * Initial Revision
- *
+ /*
  *---------------------------------------------------------------------------
  * (c) Copyright 2005 by MEN Mikro Elektronik GmbH, Nuernberg, Germany
  ****************************************************************************/
+/*
+* This program is free software: you can redistribute it and/or modify
+* it under the terms of the GNU General Public License as published by
+* the Free Software Foundation, either version 2 of the License, or
+* (at your option) any later version.
+*
+* This program is distributed in the hope that it will be useful,
+* but WITHOUT ANY WARRANTY; without even the implied warranty of
+* MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+* GNU General Public License for more details.
+*
+* You should have received a copy of the GNU General Public License
+* along with this program.  If not, see <http://www.gnu.org/licenses/>.
+*/
 
 /*! \mainpage
     This is the documentation of the F14_MON MDIS low-level driver that supports
