@@ -37,8 +37,6 @@
 * along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
 
-static const char RCSid[]="$Id: f14_mon_simp.c,v 1.3 2009/08/31 12:17:55 MRoth Exp $";
-
 #include <stdio.h>
 #include <string.h>
 #include <MEN/men_typs.h>

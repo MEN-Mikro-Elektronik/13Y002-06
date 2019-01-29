@@ -109,7 +109,7 @@
 #define   WD_TRIG		  GPIO_34		  /**< 1=trigger */
 
 /* Global */
-#define VAR_PCI_DEV_ID_ICH8  0x00002811	/* pci LPC device-id - ICH8M(F18)
+#define VAR_PCI_DEV_ID_ICH8  0x00002811	/* pci LPC device-id - ICH8M(F18) */
 
 /*-----------------------------------------+
 |  TYPEDEFS                                |
@@ -476,7 +476,7 @@ static int32 F14_MON_SetStat(
 
 	int32		value  	= (int32)value32_or_64;	/* 32bit value */
 	INT32_OR_64	valueP 	= value32_or_64;		/* stores 32/64bit pointer */
-
+	(void) valueP;
     DBGWRT_1((DBH, "LL - F14_MON_SetStat: ch=%d code=0x%04x value=0x%x\n",
 			  ch,code,value));
 
