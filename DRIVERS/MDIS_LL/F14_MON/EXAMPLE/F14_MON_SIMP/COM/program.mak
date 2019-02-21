@@ -6,14 +6,8 @@
 #
 #    Description: Makefile definitions for the F14_MON example program
 #
-#---------------------------------[ History ]---------------------------------
-#
-#   $Log: program.mak,v $
-#   Revision 1.1  2005/12/22 14:42:32  dpfeuffer
-#   Initial Revision
-#
 #-----------------------------------------------------------------------------
-#   (c) Copyright 2005 by MEN mikro elektronik GmbH, Nuernberg, Germany
+#   Copyright (c) 2005-2019, MEN Mikro Elektronik GmbH
 #*****************************************************************************
 
 MAK_NAME=f14_mon_simp

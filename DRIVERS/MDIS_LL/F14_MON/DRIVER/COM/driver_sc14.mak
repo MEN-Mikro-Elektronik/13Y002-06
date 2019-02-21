@@ -6,14 +6,8 @@
 #
 #    Description: Makefile definitions for the F14_MON_SC14 driver
 #
-#---------------------------------[ History ]---------------------------------
-#
-#   $Log: driver_sc14.mak,v $
-#   Revision 1.1  2005/12/22 14:42:26  dpfeuffer
-#   Initial Revision
-#
 #-----------------------------------------------------------------------------
-#   (c) Copyright 2005 by MEN mikro elektronik GmbH, Nuernberg, Germany
+#   Copyright (c) 2005-2019, MEN Mikro Elektronik GmbH
 #*****************************************************************************
 
 MAK_NAME=f14_mon_sc14

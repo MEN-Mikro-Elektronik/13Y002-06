@@ -6,14 +6,8 @@
 #
 #    Description: Makefile definitions for the F14_MON_WDOG driver
 #
-#---------------------------------[ History ]---------------------------------
-#
-#   $Log: driver_wdog.mak,v $
-#   Revision 1.1  2006/11/02 14:04:19  DPfeuffer
-#   Initial Revision
-#
 #-----------------------------------------------------------------------------
-#   (c) Copyright 2006 by MEN mikro elektronik GmbH, Nuernberg, Germany
+#   Copyright (c) 2006-2019, MEN Mikro Elektronik GmbH
 #*****************************************************************************
 
 MAK_NAME=f14_mon_wdog
