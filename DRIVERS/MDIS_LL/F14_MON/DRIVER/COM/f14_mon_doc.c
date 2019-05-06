@@ -138,7 +138,7 @@
 /** \example f14_mon_sc14_min.dsc */
 /** \example f14_mon_sc14_max.dsc */
 
-/*! \page dummy
+/*! \page f14dummy MEN logo
   \menimages
 */
 
