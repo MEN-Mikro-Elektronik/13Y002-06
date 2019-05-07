@@ -1,0 +1,24 @@
+@INCLUDE_PATH = $(MEN_DOXYGENTMPL)
+@INCLUDE = DoxyfileCommon
+
+PROJECT_NAME           = "F14_MON MDIS Driver"
+INPUT                  = ../DRIVER/COM \
+                         ../EXAMPLE/F14_MON_SIMP/COM/f14_mon_simp.c \
+                         ../../../../TOOLS/WDOG/WDOG_TEST/COM/wdog_test.c \
+                         $(MEN_COM_INC)/MEN/f14_mon_drv.h \
+                         $(MEN_COM_INC)/MEN/wdog.h
+            
+EXAMPLE_RECURSIVE      = YES
+EXAMPLE_PATH           = ../DRIVER/COM \
+                         ../EXAMPLE/F14_MON_SIMP/COM \
+                         ../../../../TOOLS/WDOG/WDOG_TEST/COM
+OUTPUT_DIRECTORY       = .
+EXTRACT_ALL            = YES
+EXTRACT_STATIC         = YES
+GENERATE_HTMLHELP      = YES
+WARNINGS               = YES
+WARN_IF_DOC_ERROR      = YES
+WARN_IF_UNDOCUMENTED   = YES
+GENERATE_HTMLHELP      = YES
+TAGFILES               = ../../../../LIBSRC/MDIS_API/DOC/mdis_api.tag=../../../../../LIBSRC/MDIS_API/DOC/html
+GENERATE_TAGFILE       = f14_mon_driver.tag
