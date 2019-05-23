@@ -1,6 +1,8 @@
 @INCLUDE_PATH = $(MEN_DOXYGENTMPL)
 @INCLUDE = DoxyfileCommon
 
+#MDIS_COMMIT=
+
 PROJECT_NAME           = "F14_MON MDIS Driver"
 INPUT                  = ../DRIVER/COM \
                          ../EXAMPLE/F14_MON_SIMP/COM/f14_mon_simp.c \
