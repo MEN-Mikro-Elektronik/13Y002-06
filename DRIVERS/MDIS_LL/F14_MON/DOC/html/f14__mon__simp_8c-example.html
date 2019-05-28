@@ -11,7 +11,7 @@
 
 <div class="left_to_right" style="padding-top: 6px; background-color: #F0F0F0; height: 110px; border-bottom: 2px solid #D1D1D2;">
 	<!-- Titel -->
-	<img src="menlogo.gif" alt="MEN" style="float: left; height: 103px; width: 155px; margin: 0px;"></a>
+	<img src="menlogo.gif" alt="MEN" style="float: left; height: 103px; width: 155px; margin: 0px;">
 	<h1 style="margin: 0px; padding-top: 35px; padding-bottom: 0px;">F14_MON MDIS Driver &nbsp; </h1>
 	<h3>Example Documentation</h3>
 </div>
@@ -27,23 +27,24 @@
 <span class="comment"> ************                   F14_MON_SIMP                     ************</span>
 <span class="comment"> ************                                                    ************</span>
 <span class="comment"> ****************************************************************************/</span>
- <span class="comment">/*-------------------------------[ History ]--------------------------------</span>
-<span class="comment"> *</span>
-<span class="comment"> * $Log: f14__mon__simp_8c-example.html,v $
-<span class="comment"> * Revision 1.5  2009/08/31 12:18:28  MRoth
-<span class="comment"> * (AUTOCI) Checkin due to new revision 1.5 of fileset ART/13Y002-06/13Y002-06
-<span class="comment"> *</span>
-<span class="comment"> * Revision 1.2  2006/11/02 13:26:44  DPfeuffer</span>
-<span class="comment"> * watchdog functionality removed</span>
-<span class="comment"> *</span>
-<span class="comment"> * Revision 1.1  2005/12/22 14:42:31  dpfeuffer</span>
-<span class="comment"> * Initial Revision</span>
-<span class="comment"> *</span>
+ <span class="comment">/*</span>
 <span class="comment"> *---------------------------------------------------------------------------</span>
-<span class="comment"> * (c) Copyright 2005 by MEN mikro elektronik GmbH, Nuernberg, Germany</span>
+<span class="comment"> * Copyright (c) 2005-2019, MEN Mikro Elektronik GmbH</span>
 <span class="comment"> ****************************************************************************/</span>
-
-<span class="keyword">static</span> <span class="keyword">const</span> <span class="keywordtype">char</span> RCSid[]=<span class="stringliteral">"$Id: f14__mon__simp_8c-example.html,v 1.5 2009/08/31 12:18:28 MRoth Exp $"</span>;
+<span class="comment">/*</span>
+<span class="comment">* This program is free software: you can redistribute it and/or modify</span>
+<span class="comment">* it under the terms of the GNU General Public License as published by</span>
+<span class="comment">* the Free Software Foundation, either version 2 of the License, or</span>
+<span class="comment">* (at your option) any later version.</span>
+<span class="comment">*</span>
+<span class="comment">* This program is distributed in the hope that it will be useful,</span>
+<span class="comment">* but WITHOUT ANY WARRANTY; without even the implied warranty of</span>
+<span class="comment">* MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the</span>
+<span class="comment">* GNU General Public License for more details.</span>
+<span class="comment">*</span>
+<span class="comment">* You should have received a copy of the GNU General Public License</span>
+<span class="comment">* along with this program.  If not, see &lt;http://www.gnu.org/licenses/&gt;.</span>
+<span class="comment">*/</span>
 
 <span class="preprocessor">#include &lt;stdio.h&gt;</span>
 <span class="preprocessor">#include &lt;string.h&gt;</span>
@@ -55,10 +56,10 @@
 <span class="comment">/*--------------------------------------+</span>
 <span class="comment">|   PROTOTYPES                          |</span>
 <span class="comment">+--------------------------------------*/</span>
-<span class="keyword">static</span> <span class="keywordtype">void</span> <a name="a0"></a><a class="code" href="f14__mon__simp_8c.html#a1">PrintError</a>(<span class="keywordtype">char</span> *info);
+<span class="keyword">static</span> <span class="keywordtype">void</span> <a name="a0"></a><a class="code" href="f14__mon__simp_8c.html#a0">PrintError</a>(<span class="keywordtype">char</span> *info);
 
 <span class="comment">/********************************* main ************************************/</span>
-<span class="keywordtype">int</span> <a name="a1"></a><a class="code" href="f14__mon__simp_8c.html#a2">main</a>(<span class="keywordtype">int</span> argc, <span class="keywordtype">char</span> *argv[])
+<span class="keywordtype">int</span> <a name="a1"></a><a class="code" href="f14__mon__simp_8c.html#a1">main</a>(<span class="keywordtype">int</span> argc, <span class="keywordtype">char</span> *argv[])
 {
     <a class="code" href="f14__mon__drv_8h.html#a10">MDIS_PATH</a> path;
     int32   value, ledState=0;
@@ -78,8 +79,8 @@
     <span class="comment">/*--------------------+</span>
 <span class="comment">    |  open path          |</span>
 <span class="comment">    +--------------------*/</span>
-    <span class="keywordflow">if</span> ((path = M_open(device)) &lt; 0) {
-        <a class="code" href="f14__mon__simp_8c.html#a1">PrintError</a>(<span class="stringliteral">"open"</span>);
+    <span class="keywordflow">if</span> ((path = <a name="a2"></a><a class="codeRef" doxygen="mdis_api.tag:../../../../../LIBSRC/MDIS_API/DOC/html/" href="../../../../../LIBSRC/MDIS_API/DOC/html/mdis__api_8c.html#a4">M_open</a>(device)) &lt; 0) {
+        <a class="code" href="f14__mon__simp_8c.html#a0">PrintError</a>(<span class="stringliteral">"open"</span>);
         <span class="keywordflow">return</span>(1);
     }
 
@@ -90,15 +91,15 @@
         <span class="comment">/* LED */</span>
         ledState = !ledState;
         printf(<span class="stringliteral">"- switch status LED %s\n"</span>, (ledState ? <span class="stringliteral">"on"</span> : <span class="stringliteral">"off"</span>));
-        <span class="keywordflow">if</span> ((M_setstat(path, F14_MON_STATUS_LED, ledState)) &lt; 0) {
-            <a class="code" href="f14__mon__simp_8c.html#a1">PrintError</a>(<span class="stringliteral">"setstat F14_MON_STATUS_LED"</span>);
+        <span class="keywordflow">if</span> ((<a name="a3"></a><a class="codeRef" doxygen="mdis_api.tag:../../../../../LIBSRC/MDIS_API/DOC/html/" href="../../../../../LIBSRC/MDIS_API/DOC/html/mdis__api_8c.html#a13">M_setstat</a>(path, F14_MON_STATUS_LED, ledState)) &lt; 0) {
+            <a class="code" href="f14__mon__simp_8c.html#a0">PrintError</a>(<span class="stringliteral">"setstat F14_MON_STATUS_LED"</span>);
             <span class="keywordflow">goto</span> abort;
         }
 
         <span class="comment">/* Power Supply State */</span>
         printf(<span class="stringliteral">"- power supply state:"</span>);
-        <span class="keywordflow">if</span> ((M_getstat(path, F14_MON_PS_STATE, &amp;value)) &lt; 0) {
-            <a class="code" href="f14__mon__simp_8c.html#a1">PrintError</a>(<span class="stringliteral">"getstat F14_MON_PS_STATE"</span>);
+        <span class="keywordflow">if</span> ((<a name="a4"></a><a class="codeRef" doxygen="mdis_api.tag:../../../../../LIBSRC/MDIS_API/DOC/html/" href="../../../../../LIBSRC/MDIS_API/DOC/html/mdis__api_8c.html#a12">M_getstat</a>(path, F14_MON_PS_STATE, &amp;value)) &lt; 0) {
+            <a class="code" href="f14__mon__simp_8c.html#a0">PrintError</a>(<span class="stringliteral">"getstat F14_MON_PS_STATE"</span>);
             <span class="keywordflow">goto</span> abort;
         }
         <span class="keywordflow">if</span>(value &amp; <a class="code" href="f14__mon__drv_8h.html#a2">F14_MON_PS_FAIL</a>)
@@ -108,8 +109,8 @@
 
         <span class="keywordflow">if</span>( value ){
             printf(<span class="stringliteral">" - reset PS_XXX\n"</span>);
-            <span class="keywordflow">if</span> ((M_setstat(path, F14_MON_PS_STATE, 0)) &lt; 0) {
-                <a class="code" href="f14__mon__simp_8c.html#a1">PrintError</a>(<span class="stringliteral">"setstat F14_MON_PS_STATE"</span>);
+            <span class="keywordflow">if</span> ((<a class="codeRef" doxygen="mdis_api.tag:../../../../../LIBSRC/MDIS_API/DOC/html/" href="../../../../../LIBSRC/MDIS_API/DOC/html/mdis__api_8c.html#a13">M_setstat</a>(path, F14_MON_PS_STATE, 0)) &lt; 0) {
+                <a class="code" href="f14__mon__simp_8c.html#a0">PrintError</a>(<span class="stringliteral">"setstat F14_MON_PS_STATE"</span>);
                 <span class="keywordflow">goto</span> abort;
             }
         }
@@ -124,16 +125,16 @@
 <span class="comment">    |  cleanup            |</span>
 <span class="comment">    +--------------------*/</span>
     abort:
-    <span class="keywordflow">if</span> (M_close(path) &lt; 0)
-        <a class="code" href="f14__mon__simp_8c.html#a1">PrintError</a>(<span class="stringliteral">"close"</span>);
+    <span class="keywordflow">if</span> (<a name="a5"></a><a class="codeRef" doxygen="mdis_api.tag:../../../../../LIBSRC/MDIS_API/DOC/html/" href="../../../../../LIBSRC/MDIS_API/DOC/html/mdis__api_8c.html#a9">M_close</a>(path) &lt; 0)
+        <a class="code" href="f14__mon__simp_8c.html#a0">PrintError</a>(<span class="stringliteral">"close"</span>);
 
     <span class="keywordflow">return</span>(0);
 }
 
 <span class="comment">/********************************* PrintError ******************************/</span>
-<span class="keyword">static</span> <span class="keywordtype">void</span> <a class="code" href="f14__mon__simp_8c.html#a1">PrintError</a>(<span class="keywordtype">char</span> *info)
+<span class="keyword">static</span> <span class="keywordtype">void</span> <a class="code" href="f14__mon__simp_8c.html#a0">PrintError</a>(<span class="keywordtype">char</span> *info)
 {
-    printf(<span class="stringliteral">"*** can't %s: %s\n"</span>, info, M_errstring(UOS_ErrnoGet()));
+    printf(<span class="stringliteral">"*** can't %s: %s\n"</span>, info, <a name="a6"></a><a class="codeRef" doxygen="mdis_api.tag:../../../../../LIBSRC/MDIS_API/DOC/html/" href="../../../../../LIBSRC/MDIS_API/DOC/html/m__errstr_8c.html#a0">M_errstring</a>(UOS_ErrnoGet()));
 }
 
 
@@ -145,9 +146,10 @@
 <!-- Footer -->
 	<p class="footer">
 	Generated for F14_MON MDIS Driver using <a href="http://www.doxygen.org">doxygen</a>.<br>
-	Copyright &copy; 2008 <a href="http://www.men.de">MEN Mikro Elektronik GmbH</a>. All Rights Reserved.
+	Copyright &copy; 2019 <a href="http://www.men.de">MEN Mikro Elektronik GmbH</a>. All Rights Reserved.
 	</p>
 </div>
 
 </body>
 </html>
+
