@@ -3,8 +3,6 @@
  *        \file  f14_mon_doc.c
  *
  *      \author  dp
- *        $Date: 2007/11/20 14:56:28 $
- *    $Revision: 1.4 $
  *
  *      \brief   User documentation for F14_MON driver
  *

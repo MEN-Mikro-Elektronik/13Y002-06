@@ -6,8 +6,6 @@
 /*!
  *         \file f14_mon_simp.c
  *       \author dieter.pfeuffer@men.de
- *        $Date: 2009/08/31 12:17:55 $
- *    $Revision: 1.3 $
  *
  *       \brief  Simple example program for the F14_MON driver
  *

@@ -3,8 +3,6 @@
  *        \file  f14_mon_drv.c
  *
  *      \author  alfred.jendrusch@men.de, dieter.pfeuffer@men.de
- *        $Date: 2009/08/31 12:17:53 $
- *    $Revision: 1.5 $
  *
  *      \brief   Low-level driver for F14/F15/F17/F18/D601 monitoring features
  *
@@ -143,6 +141,8 @@ typedef struct {
 /* include files which need LL_HANDLE */
 #include <MEN/ll_entry.h>   /* low-level driver jump table  */
 #include <MEN/f14_mon_drv.h>   /* F14_MON driver header file */
+
+static const char IdentString[]=MENT_XSTR(MAK_REVISION);
 
 /*-----------------------------------------+
 |  PROTOTYPES                              |
@@ -853,7 +853,7 @@ static int32 F14_MON_Info(
  */
 static char* Ident( void )
 {
-    return( "F14_MON - F14_MON low-level driver: $Id: f14_mon_drv.c,v 1.5 2009/08/31 12:17:53 MRoth Exp $" );
+    return( (char*) IdentString );
 }
 
 /********************************* Cleanup *********************************/

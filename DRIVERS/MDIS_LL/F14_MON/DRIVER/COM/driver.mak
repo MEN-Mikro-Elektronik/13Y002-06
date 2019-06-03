@@ -1,8 +1,6 @@
 #***************************  M a k e f i l e  *******************************
 #
 #         Author: dp
-#          $Date: 2005/12/22 14:42:23 $
-#      $Revision: 1.1 $
 #
 #    Description: Makefile definitions for the F14_MON driver
 #
@@ -23,8 +21,13 @@
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 MAK_NAME=f14_mon
+# the next line is updated during the MDIS installation
+STAMPED_REVISION="13Y002-06_01_08-6-g5d0d0d0-dirty_2019-05-30"
 
-MAK_SWITCH=$(SW_PREFIX)MAC_IO_MAPPED
+DEF_REVISION=MAK_REVISION=$(STAMPED_REVISION)
+
+MAK_SWITCH=$(SW_PREFIX)MAC_IO_MAPPED \
+		$(SW_PREFIX)$(DEF_REVISION)
 
 MAK_LIBS=$(LIB_PREFIX)$(MEN_LIB_DIR)/desc$(LIB_SUFFIX)	\
          $(LIB_PREFIX)$(MEN_LIB_DIR)/oss$(LIB_SUFFIX)	\

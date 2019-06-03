@@ -3,8 +3,6 @@
  *        \file  f14_mon_drv.h
  *
  *      \author  dp
- *        $Date: 2009/08/31 12:18:00 $
- *    $Revision: 3.2 $
  *
  *       \brief  Header file for F14_MON driver containing
  *               F14_MON specific status codes and
