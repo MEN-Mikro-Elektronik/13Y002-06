@@ -2,8 +2,8 @@
 <package xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="packagedesc.xsd">
 	<name>13y00206</name>
 	<description>MDIS5 F14/F15/F17/F18/D601/SC14 board monitoring driver package</description>
-	<date>2009-08-31</date>
-	<revision>1.5</revision>
+	<date>2019-06-07</date>
+	<revision>13Y002-06_01_08-8-g1633a27</revision>
 	<docroot>DRIVERS/MDIS_LL/F14_MON/DOC/html/index.html</docroot>
 	<!-- Models -->
 	<modellist>
