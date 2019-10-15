@@ -29,8 +29,6 @@
 <span class="comment"> ****************************************************************************</span>
 <span class="comment"> *</span>
 <span class="comment"> *       Author: ds</span>
-<span class="comment"> *        $Date: 2009/08/31 12:17:57 $</span>
-<span class="comment"> *    $Revision: 1.5 $</span>
 <span class="comment"> *</span>
 <span class="comment"> *  Description: Configure and serve Watchdog</span>
 <span class="comment"> *</span>
@@ -64,11 +62,13 @@
 <span class="preprocessor">#include &lt;MEN/mdis_api.h&gt;</span>
 <span class="preprocessor">#include &lt;<a class="code" href="wdog_8h.html">MEN/wdog.h</a>&gt;</span>
 
+<span class="keyword">static</span> <span class="keyword">const</span> <span class="keywordtype">char</span> IdentString[]=MENT_XSTR(MAK_REVISION);
+
 <span class="comment">/*--------------------------------------+</span>
 <span class="comment">|   PROTOTYPES                          |</span>
 <span class="comment">+--------------------------------------*/</span>
-<span class="keyword">static</span> <span class="keywordtype">void</span> <a name="a7"></a><a class="code" href="wdog__test_8c.html#a0">usage</a>(<span class="keywordtype">void</span>);
-<span class="keyword">static</span> <span class="keywordtype">void</span> <a name="a8"></a><a class="code" href="wdog__test_8c.html#a1">PrintMdisError</a>(<span class="keywordtype">char</span> *info);
+<span class="keyword">static</span> <span class="keywordtype">void</span> <a name="a7"></a><a class="code" href="wdog__test_8c.html#a1">usage</a>(<span class="keywordtype">void</span>);
+<span class="keyword">static</span> <span class="keywordtype">void</span> <a name="a8"></a><a class="code" href="wdog__test_8c.html#a2">PrintMdisError</a>(<span class="keywordtype">char</span> *info);
 
 
 <span class="comment">/********************************* usage ************************************</span>
@@ -80,7 +80,7 @@
 <span class="comment"> *  Output.....: -</span>
 <span class="comment"> *  Globals....: -</span>
 <span class="comment"> ****************************************************************************/</span>
-<span class="keyword">static</span> <span class="keywordtype">void</span> <a class="code" href="wdog__test_8c.html#a0">usage</a>(<span class="keywordtype">void</span>)
+<span class="keyword">static</span> <span class="keywordtype">void</span> <a class="code" href="wdog__test_8c.html#a1">usage</a>(<span class="keywordtype">void</span>)
 {
     printf(<span class="stringliteral">"Usage: wdog_test [&lt;opts&gt;] &lt;device&gt; [&lt;opts&gt;]\n"</span>);
     printf(<span class="stringliteral">"Function: Configure and serve Watchdog\n"</span>);
@@ -108,7 +108,7 @@
     printf(<span class="stringliteral">"  -i         get watchdog-status...................... [none]\n"</span>);
     printf(<span class="stringliteral">"  -o         check if watchdog had shot off the system [none]\n"</span>);
     printf(<span class="stringliteral">"\n"</span>);
-    printf(<span class="stringliteral">"(c) 1999 by MEN mikro elektronik GmbH\n\n"</span>);
+    printf(<span class="stringliteral">"Copyright (c) 1999-2019, MEN Mikro Elektronik GmbH\n%s\n"</span>, IdentString);
 }
 
 <span class="comment">/********************************* main *************************************</span>
@@ -136,7 +136,7 @@
     }
 
     <span class="keywordflow">if</span> (UTL_TSTOPT(<span class="stringliteral">"?"</span>)) {                      <span class="comment">/* help requested ? */</span>
-        <a class="code" href="wdog__test_8c.html#a0">usage</a>();
+        <a class="code" href="wdog__test_8c.html#a1">usage</a>();
         <span class="keywordflow">return</span>(1);
     }
 
@@ -150,7 +150,7 @@
         }
 
     <span class="keywordflow">if</span> ( (!device) || (argc &lt; 3) ) {
-        <a class="code" href="wdog__test_8c.html#a0">usage</a>();
+        <a class="code" href="wdog__test_8c.html#a1">usage</a>();
         <span class="keywordflow">return</span>(1);
     }
 
@@ -165,7 +165,7 @@
 <span class="comment">    |  open path          |</span>
 <span class="comment">    +--------------------*/</span>
     <span class="keywordflow">if</span> ((path = <a name="a10"></a><a class="codeRef" doxygen="mdis_api.tag:../../../../../LIBSRC/MDIS_API/DOC/html/" href="../../../../../LIBSRC/MDIS_API/DOC/html/mdis__api_8c.html#a4">M_open</a>(device)) &lt; 0) {
-        <a class="code" href="wdog__test_8c.html#a1">PrintMdisError</a>(<span class="stringliteral">"open"</span>);
+        <a class="code" href="wdog__test_8c.html#a2">PrintMdisError</a>(<span class="stringliteral">"open"</span>);
         <span class="keywordflow">return</span>(1);
     }
 
@@ -174,7 +174,7 @@
 <span class="comment">    +--------------------*/</span>
     <span class="keywordflow">if</span> (status) {
         <span class="keywordflow">if</span> ((<a name="a11"></a><a class="codeRef" doxygen="mdis_api.tag:../../../../../LIBSRC/MDIS_API/DOC/html/" href="../../../../../LIBSRC/MDIS_API/DOC/html/mdis__api_8c.html#a12">M_getstat</a>(path, WDOG_STATUS, &amp;status)) &lt; 0) {
-            <a class="code" href="wdog__test_8c.html#a1">PrintMdisError</a>(<span class="stringliteral">"getstat WDOG_STATUS"</span>);
+            <a class="code" href="wdog__test_8c.html#a2">PrintMdisError</a>(<span class="stringliteral">"getstat WDOG_STATUS"</span>);
             <span class="keywordflow">goto</span> abort;
         }
         printf(<span class="stringliteral">"Watchdog is %s\n"</span>, status ? <span class="stringliteral">"active"</span> : <span class="stringliteral">"inactive"</span>);
@@ -185,7 +185,7 @@
 <span class="comment">    +--------------------*/</span>
     <span class="keywordflow">if</span> (shot) {
         <span class="keywordflow">if</span> ((<a class="codeRef" doxygen="mdis_api.tag:../../../../../LIBSRC/MDIS_API/DOC/html/" href="../../../../../LIBSRC/MDIS_API/DOC/html/mdis__api_8c.html#a12">M_getstat</a>(path, WDOG_SHOT, &amp;shot)) &lt; 0) {
-            <a class="code" href="wdog__test_8c.html#a1">PrintMdisError</a>(<span class="stringliteral">"getstat WDOG_SHOT"</span>);
+            <a class="code" href="wdog__test_8c.html#a2">PrintMdisError</a>(<span class="stringliteral">"getstat WDOG_SHOT"</span>);
             <span class="keywordflow">goto</span> abort;
         }
         printf(<span class="stringliteral">"Did the watchdog initiates the last system reset ?\n"</span>);
@@ -202,7 +202,7 @@
 <span class="comment">    +--------------------*/</span>
     <span class="keywordflow">if</span> (getTime) {
         <span class="keywordflow">if</span> ((<a class="codeRef" doxygen="mdis_api.tag:../../../../../LIBSRC/MDIS_API/DOC/html/" href="../../../../../LIBSRC/MDIS_API/DOC/html/mdis__api_8c.html#a12">M_getstat</a>(path, WDOG_TIME, &amp;getTime)) &lt; 0) {
-            <a class="code" href="wdog__test_8c.html#a1">PrintMdisError</a>(<span class="stringliteral">"getstat WDOG_TIME"</span>);
+            <a class="code" href="wdog__test_8c.html#a2">PrintMdisError</a>(<span class="stringliteral">"getstat WDOG_TIME"</span>);
             <span class="keywordflow">goto</span> abort;
         }
         printf(<span class="stringliteral">"Watchdog time: %dmsec\n"</span>, getTime);
@@ -213,7 +213,7 @@
 <span class="comment">    +--------------------*/</span>
     <span class="keywordflow">if</span> (0 &lt; setTime) {
         <span class="keywordflow">if</span> ((<a name="a12"></a><a class="codeRef" doxygen="mdis_api.tag:../../../../../LIBSRC/MDIS_API/DOC/html/" href="../../../../../LIBSRC/MDIS_API/DOC/html/mdis__api_8c.html#a13">M_setstat</a>(path, WDOG_TIME, setTime)) &lt; 0) {
-            <a class="code" href="wdog__test_8c.html#a1">PrintMdisError</a>(<span class="stringliteral">"setstat WDOG_TIME"</span>);
+            <a class="code" href="wdog__test_8c.html#a2">PrintMdisError</a>(<span class="stringliteral">"setstat WDOG_TIME"</span>);
             <span class="keywordflow">goto</span> abort;
         }
         printf(<span class="stringliteral">"Watchdog time set to %dmsec\n"</span>, setTime);
@@ -224,7 +224,7 @@
 <span class="comment">    +--------------------*/</span>
     <span class="keywordflow">if</span> (0 == setTime) {
         <span class="keywordflow">if</span> ((<a class="codeRef" doxygen="mdis_api.tag:../../../../../LIBSRC/MDIS_API/DOC/html/" href="../../../../../LIBSRC/MDIS_API/DOC/html/mdis__api_8c.html#a13">M_setstat</a>(path, WDOG_STOP, 0)) &lt; 0) {
-            <a class="code" href="wdog__test_8c.html#a1">PrintMdisError</a>(<span class="stringliteral">"setstat WDOG_STOP"</span>);
+            <a class="code" href="wdog__test_8c.html#a2">PrintMdisError</a>(<span class="stringliteral">"setstat WDOG_STOP"</span>);
             <span class="keywordflow">goto</span> abort;
         }
         printf(<span class="stringliteral">"Watchdog stopped\n"</span>);
@@ -236,7 +236,7 @@
     <span class="keywordflow">if</span> (trigTime) {
         <span class="comment">/* start watchdog */</span>
         <span class="keywordflow">if</span> ((<a class="codeRef" doxygen="mdis_api.tag:../../../../../LIBSRC/MDIS_API/DOC/html/" href="../../../../../LIBSRC/MDIS_API/DOC/html/mdis__api_8c.html#a13">M_setstat</a>(path, WDOG_START, 0)) &lt; 0) {
-            <a class="code" href="wdog__test_8c.html#a1">PrintMdisError</a>(<span class="stringliteral">"setstat WDOG_START"</span>);
+            <a class="code" href="wdog__test_8c.html#a2">PrintMdisError</a>(<span class="stringliteral">"setstat WDOG_START"</span>);
             <span class="keywordflow">goto</span> abort;
         }
         printf(<span class="stringliteral">"Watchdog started - trigger all %dmsec\n"</span>, trigTime);
@@ -247,14 +247,14 @@
             count++;
             printf(<span class="stringliteral">"  (%6d) Trigger watchdog - Press any key to abort\n"</span>, count);
             <span class="keywordflow">if</span> ((<a class="codeRef" doxygen="mdis_api.tag:../../../../../LIBSRC/MDIS_API/DOC/html/" href="../../../../../LIBSRC/MDIS_API/DOC/html/mdis__api_8c.html#a13">M_setstat</a>(path, WDOG_TRIG, 0)) &lt; 0) {
-                <a class="code" href="wdog__test_8c.html#a1">PrintMdisError</a>(<span class="stringliteral">"setstat WDOG_TRIG"</span>);
+                <a class="code" href="wdog__test_8c.html#a2">PrintMdisError</a>(<span class="stringliteral">"setstat WDOG_TRIG"</span>);
                 <span class="keywordflow">goto</span> abort;
             }
         } <span class="keywordflow">while</span>(UOS_KeyPressed() == -1);
 
         <span class="comment">/* try to stop watchdog */</span>
         <span class="keywordflow">if</span> ((<a class="codeRef" doxygen="mdis_api.tag:../../../../../LIBSRC/MDIS_API/DOC/html/" href="../../../../../LIBSRC/MDIS_API/DOC/html/mdis__api_8c.html#a13">M_setstat</a>(path, WDOG_STOP, 0)) &lt; 0) {
-            <a class="code" href="wdog__test_8c.html#a1">PrintMdisError</a>(<span class="stringliteral">"setstat WDOG_STOP"</span>);
+            <a class="code" href="wdog__test_8c.html#a2">PrintMdisError</a>(<span class="stringliteral">"setstat WDOG_STOP"</span>);
             <span class="keywordflow">goto</span> abort;
         }
         printf(<span class="stringliteral">"Watchdog stopped\n"</span>);
@@ -266,7 +266,7 @@
     <span class="keywordflow">if</span> (testTime) {
         <span class="comment">/* start watchdog */</span>
         <span class="keywordflow">if</span> ((<a class="codeRef" doxygen="mdis_api.tag:../../../../../LIBSRC/MDIS_API/DOC/html/" href="../../../../../LIBSRC/MDIS_API/DOC/html/mdis__api_8c.html#a13">M_setstat</a>(path, WDOG_START, 0)) &lt; 0) {
-            <a class="code" href="wdog__test_8c.html#a1">PrintMdisError</a>(<span class="stringliteral">"setstat WDOG_START"</span>);
+            <a class="code" href="wdog__test_8c.html#a2">PrintMdisError</a>(<span class="stringliteral">"setstat WDOG_START"</span>);
             <span class="keywordflow">goto</span> abort;
         }
         printf(<span class="stringliteral">"Watchdog started - force system reset\n"</span>, trigTime);
@@ -276,7 +276,7 @@
             UOS_Delay(testTime);
             printf(<span class="stringliteral">"  Trigger watchdog after %6dmsec\n"</span>, testTime);
             <span class="keywordflow">if</span> ((<a class="codeRef" doxygen="mdis_api.tag:../../../../../LIBSRC/MDIS_API/DOC/html/" href="../../../../../LIBSRC/MDIS_API/DOC/html/mdis__api_8c.html#a13">M_setstat</a>(path, WDOG_TRIG, 0)) &lt; 0) {
-                <a class="code" href="wdog__test_8c.html#a1">PrintMdisError</a>(<span class="stringliteral">"setstat WDOG_TRIG"</span>);
+                <a class="code" href="wdog__test_8c.html#a2">PrintMdisError</a>(<span class="stringliteral">"setstat WDOG_TRIG"</span>);
                 <span class="keywordflow">goto</span> abort;
             }
             <span class="keywordflow">if</span> (testTime &gt;=   100) incrTime =   10;
@@ -291,7 +291,7 @@
 <span class="comment">    +--------------------*/</span>
     abort:
     <span class="keywordflow">if</span> (<a name="a13"></a><a class="codeRef" doxygen="mdis_api.tag:../../../../../LIBSRC/MDIS_API/DOC/html/" href="../../../../../LIBSRC/MDIS_API/DOC/html/mdis__api_8c.html#a9">M_close</a>(path) &lt; 0)
-        <a class="code" href="wdog__test_8c.html#a1">PrintMdisError</a>(<span class="stringliteral">"close"</span>);
+        <a class="code" href="wdog__test_8c.html#a2">PrintMdisError</a>(<span class="stringliteral">"close"</span>);
 
     <span class="keywordflow">return</span>(0);
 }
@@ -305,7 +305,7 @@
 <span class="comment"> *  Output.....: -</span>
 <span class="comment"> *  Globals....: -</span>
 <span class="comment"> ****************************************************************************/</span>
-<span class="keyword">static</span> <span class="keywordtype">void</span> <a class="code" href="wdog__test_8c.html#a1">PrintMdisError</a>(<span class="keywordtype">char</span> *info)
+<span class="keyword">static</span> <span class="keywordtype">void</span> <a class="code" href="wdog__test_8c.html#a2">PrintMdisError</a>(<span class="keywordtype">char</span> *info)
 {
     printf(<span class="stringliteral">"*** can't %s: %s\n"</span>, info, <a name="a14"></a><a class="codeRef" doxygen="mdis_api.tag:../../../../../LIBSRC/MDIS_API/DOC/html/" href="../../../../../LIBSRC/MDIS_API/DOC/html/m__errstr_8c.html#a0">M_errstring</a>(UOS_ErrnoGet()));
 }
@@ -318,8 +318,7 @@
 <div class="footer">
 <!-- Footer -->
 	<p class="footer">
-	Generated for F14_MON MDIS Driver using <a href="http://www.doxygen.org">doxygen</a>.<br>
-	Copyright &copy; 2019 <a href="http://www.men.de">MEN Mikro Elektronik GmbH</a>. All Rights Reserved.
+	Generated for F14_MON MDIS Driver using <a href="http://www.doxygen.org">doxygen</a>. All Rights Reserved.
 	</p>
 </div>
 

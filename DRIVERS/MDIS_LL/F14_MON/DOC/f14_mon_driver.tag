@@ -234,80 +234,86 @@
     <member kind="function" static="yes">
       <type>int32</type>
       <name>F14_MON_Init</name>
-      <anchor>a34</anchor>
+      <anchor>a35</anchor>
       <arglist>(DESC_SPEC *descSpec, OSS_HANDLE *osHdl, MACCESS *ma, OSS_SEM_HANDLE *devSemHdl, OSS_IRQ_HANDLE *irqHdl, LL_HANDLE **llHdlP)</arglist>
     </member>
     <member kind="function" static="yes">
       <type>int32</type>
       <name>F14_MON_Exit</name>
-      <anchor>a35</anchor>
+      <anchor>a36</anchor>
       <arglist>(LL_HANDLE **llHdlP)</arglist>
     </member>
     <member kind="function" static="yes">
       <type>int32</type>
       <name>F14_MON_Read</name>
-      <anchor>a36</anchor>
+      <anchor>a37</anchor>
       <arglist>(LL_HANDLE *llHdl, int32 ch, int32 *value)</arglist>
     </member>
     <member kind="function" static="yes">
       <type>int32</type>
       <name>F14_MON_Write</name>
-      <anchor>a37</anchor>
+      <anchor>a38</anchor>
       <arglist>(LL_HANDLE *llHdl, int32 ch, int32 value)</arglist>
     </member>
     <member kind="function" static="yes">
       <type>int32</type>
       <name>F14_MON_SetStat</name>
-      <anchor>a38</anchor>
+      <anchor>a39</anchor>
       <arglist>(LL_HANDLE *llHdl, int32 ch, int32 code, INT32_OR_64 value32_or_64)</arglist>
     </member>
     <member kind="function" static="yes">
       <type>int32</type>
       <name>F14_MON_GetStat</name>
-      <anchor>a39</anchor>
+      <anchor>a40</anchor>
       <arglist>(LL_HANDLE *llHdl, int32 ch, int32 code, INT32_OR_64 *value32_or_64P)</arglist>
     </member>
     <member kind="function" static="yes">
       <type>int32</type>
       <name>F14_MON_BlockRead</name>
-      <anchor>a40</anchor>
+      <anchor>a41</anchor>
       <arglist>(LL_HANDLE *llHdl, int32 ch, void *buf, int32 size, int32 *nbrRdBytesP)</arglist>
     </member>
     <member kind="function" static="yes">
       <type>int32</type>
       <name>F14_MON_BlockWrite</name>
-      <anchor>a41</anchor>
+      <anchor>a42</anchor>
       <arglist>(LL_HANDLE *llHdl, int32 ch, void *buf, int32 size, int32 *nbrWrBytesP)</arglist>
     </member>
     <member kind="function" static="yes">
       <type>int32</type>
       <name>F14_MON_Irq</name>
-      <anchor>a42</anchor>
+      <anchor>a43</anchor>
       <arglist>(LL_HANDLE *llHdl)</arglist>
     </member>
     <member kind="function" static="yes">
       <type>int32</type>
       <name>F14_MON_Info</name>
-      <anchor>a43</anchor>
+      <anchor>a44</anchor>
       <arglist>(int32 infoType,...)</arglist>
     </member>
     <member kind="function" static="yes">
       <type>char *</type>
       <name>Ident</name>
-      <anchor>a44</anchor>
+      <anchor>a45</anchor>
       <arglist>(void)</arglist>
     </member>
     <member kind="function" static="yes">
       <type>int32</type>
       <name>Cleanup</name>
-      <anchor>a45</anchor>
+      <anchor>a46</anchor>
       <arglist>(LL_HANDLE *llHdl, int32 retCode)</arglist>
     </member>
     <member kind="function">
       <type>void</type>
       <name>__F14_MON_GetEntry</name>
-      <anchor>a46</anchor>
+      <anchor>a47</anchor>
       <arglist>(LL_ENTRY *drvP)</arglist>
+    </member>
+    <member kind="variable" static="yes">
+      <type>const char</type>
+      <name>IdentString</name>
+      <anchor>a34</anchor>
+      <arglist>[]</arglist>
     </member>
   </compound>
   <compound kind="file">
@@ -530,20 +536,26 @@
     <member kind="function" static="yes">
       <type>void</type>
       <name>usage</name>
-      <anchor>a0</anchor>
+      <anchor>a1</anchor>
       <arglist>(void)</arglist>
     </member>
     <member kind="function" static="yes">
       <type>void</type>
       <name>PrintMdisError</name>
-      <anchor>a1</anchor>
+      <anchor>a2</anchor>
       <arglist>(char *info)</arglist>
     </member>
     <member kind="function">
       <type>int</type>
       <name>main</name>
-      <anchor>a2</anchor>
+      <anchor>a3</anchor>
       <arglist>(int argc, char *argv[])</arglist>
+    </member>
+    <member kind="variable" static="yes">
+      <type>const char</type>
+      <name>IdentString</name>
+      <anchor>a0</anchor>
+      <arglist>[]</arglist>
     </member>
   </compound>
   <compound kind="struct">

@@ -98,39 +98,39 @@
 <tr><td>&nbsp;</td><td><em class="mdesc">1=trigger</em> <a href="#a32"></a><em></em><br><br></td></tr>
 <tr><td nowrap align=right valign=top>#define&nbsp;</td><td valign=bottom><a class="el" href="f14__mon__drv_8c.html#a33">VAR_PCI_DEV_ID_ICH8</a>&nbsp;&nbsp;&nbsp;0x00002811</td></tr>
 <tr><td colspan=2><br><h2>Functions</h2></td></tr>
-<tr><td nowrap align=right valign=top>int32&nbsp;</td><td valign=bottom><a class="el" href="f14__mon__drv_8c.html#a34">F14_MON_Init</a> (DESC_SPEC *descSpec, OSS_HANDLE *osHdl, MACCESS *ma, OSS_SEM_HANDLE *devSemHdl, OSS_IRQ_HANDLE *irqHdl, <a class="el" href="structLL__HANDLE.html">LL_HANDLE</a> **llHdlP)</td></tr>
-<tr><td>&nbsp;</td><td><em class="mdesc">Allocate and return low-level handle, initialize hardware.</em> <a href="#a34"></a><em></em><br><br></td></tr>
-<tr><td nowrap align=right valign=top>int32&nbsp;</td><td valign=bottom><a class="el" href="f14__mon__drv_8c.html#a35">F14_MON_Exit</a> (<a class="el" href="structLL__HANDLE.html">LL_HANDLE</a> **llHdlP)</td></tr>
-<tr><td>&nbsp;</td><td><em class="mdesc">De-initialize hardware and clean up memory.</em> <a href="#a35"></a><em></em><br><br></td></tr>
-<tr><td nowrap align=right valign=top>int32&nbsp;</td><td valign=bottom><a class="el" href="f14__mon__drv_8c.html#a36">F14_MON_Read</a> (<a class="el" href="structLL__HANDLE.html">LL_HANDLE</a> *llHdl, int32 ch, int32 *value)</td></tr>
-<tr><td>&nbsp;</td><td><em class="mdesc">Read a value from the device.</em> <a href="#a36"></a><em></em><br><br></td></tr>
-<tr><td nowrap align=right valign=top>int32&nbsp;</td><td valign=bottom><a class="el" href="f14__mon__drv_8c.html#a37">F14_MON_Write</a> (<a class="el" href="structLL__HANDLE.html">LL_HANDLE</a> *llHdl, int32 ch, int32 value)</td></tr>
-<tr><td>&nbsp;</td><td><em class="mdesc">Description: Write a value to the device.</em> <a href="#a37"></a><em></em><br><br></td></tr>
-<tr><td nowrap align=right valign=top>int32&nbsp;</td><td valign=bottom><a class="el" href="f14__mon__drv_8c.html#a38">F14_MON_SetStat</a> (<a class="el" href="structLL__HANDLE.html">LL_HANDLE</a> *llHdl, int32 ch, int32 code, INT32_OR_64 value32_or_64)</td></tr>
-<tr><td>&nbsp;</td><td><em class="mdesc">Set the driver status.</em> <a href="#a38"></a><em></em><br><br></td></tr>
-<tr><td nowrap align=right valign=top>int32&nbsp;</td><td valign=bottom><a class="el" href="f14__mon__drv_8c.html#a39">F14_MON_GetStat</a> (<a class="el" href="structLL__HANDLE.html">LL_HANDLE</a> *llHdl, int32 ch, int32 code, INT32_OR_64 *value32_or_64P)</td></tr>
-<tr><td>&nbsp;</td><td><em class="mdesc">Get the driver status.</em> <a href="#a39"></a><em></em><br><br></td></tr>
-<tr><td nowrap align=right valign=top>int32&nbsp;</td><td valign=bottom><a class="el" href="f14__mon__drv_8c.html#a40">F14_MON_BlockRead</a> (<a class="el" href="structLL__HANDLE.html">LL_HANDLE</a> *llHdl, int32 ch, void *buf, int32 size, int32 *nbrRdBytesP)</td></tr>
-<tr><td>&nbsp;</td><td><em class="mdesc">Read a data block from the device.</em> <a href="#a40"></a><em></em><br><br></td></tr>
-<tr><td nowrap align=right valign=top>int32&nbsp;</td><td valign=bottom><a class="el" href="f14__mon__drv_8c.html#a41">F14_MON_BlockWrite</a> (<a class="el" href="structLL__HANDLE.html">LL_HANDLE</a> *llHdl, int32 ch, void *buf, int32 size, int32 *nbrWrBytesP)</td></tr>
-<tr><td>&nbsp;</td><td><em class="mdesc">Write a data block from the device.</em> <a href="#a41"></a><em></em><br><br></td></tr>
-<tr><td nowrap align=right valign=top>int32&nbsp;</td><td valign=bottom><a class="el" href="f14__mon__drv_8c.html#a42">F14_MON_Irq</a> (<a class="el" href="structLL__HANDLE.html">LL_HANDLE</a> *llHdl)</td></tr>
-<tr><td>&nbsp;</td><td><em class="mdesc">Interrupt service routine.</em> <a href="#a42"></a><em></em><br><br></td></tr>
-<tr><td nowrap align=right valign=top>int32&nbsp;</td><td valign=bottom><a class="el" href="f14__mon__drv_8c.html#a43">F14_MON_Info</a> (int32 infoType,...)</td></tr>
-<tr><td>&nbsp;</td><td><em class="mdesc">Get information about hardware and driver requirements.</em> <a href="#a43"></a><em></em><br><br></td></tr>
-<tr><td nowrap align=right valign=top>char *&nbsp;</td><td valign=bottom><a class="el" href="f14__mon__drv_8c.html#a44">Ident</a> (void)</td></tr>
-<tr><td>&nbsp;</td><td><em class="mdesc">Return ident string.</em> <a href="#a44"></a><em></em><br><br></td></tr>
-<tr><td nowrap align=right valign=top>int32&nbsp;</td><td valign=bottom><a class="el" href="f14__mon__drv_8c.html#a45">Cleanup</a> (<a class="el" href="structLL__HANDLE.html">LL_HANDLE</a> *llHdl, int32 retCode)</td></tr>
-<tr><td>&nbsp;</td><td><em class="mdesc">Close all handles, free memory and return error code.</em> <a href="#a45"></a><em></em><br><br></td></tr>
-<tr><td nowrap align=right valign=top>void&nbsp;</td><td valign=bottom><a class="el" href="f14__mon__drv_8c.html#a46">__F14_MON_GetEntry</a> (LL_ENTRY *drvP)</td></tr>
-<tr><td>&nbsp;</td><td><em class="mdesc">Initialize driver's jump table.</em> <a href="#a46"></a><em></em><br><br></td></tr>
+<tr><td nowrap align=right valign=top>int32&nbsp;</td><td valign=bottom><a class="el" href="f14__mon__drv_8c.html#a35">F14_MON_Init</a> (DESC_SPEC *descSpec, OSS_HANDLE *osHdl, MACCESS *ma, OSS_SEM_HANDLE *devSemHdl, OSS_IRQ_HANDLE *irqHdl, <a class="el" href="structLL__HANDLE.html">LL_HANDLE</a> **llHdlP)</td></tr>
+<tr><td>&nbsp;</td><td><em class="mdesc">Allocate and return low-level handle, initialize hardware.</em> <a href="#a35"></a><em></em><br><br></td></tr>
+<tr><td nowrap align=right valign=top>int32&nbsp;</td><td valign=bottom><a class="el" href="f14__mon__drv_8c.html#a36">F14_MON_Exit</a> (<a class="el" href="structLL__HANDLE.html">LL_HANDLE</a> **llHdlP)</td></tr>
+<tr><td>&nbsp;</td><td><em class="mdesc">De-initialize hardware and clean up memory.</em> <a href="#a36"></a><em></em><br><br></td></tr>
+<tr><td nowrap align=right valign=top>int32&nbsp;</td><td valign=bottom><a class="el" href="f14__mon__drv_8c.html#a37">F14_MON_Read</a> (<a class="el" href="structLL__HANDLE.html">LL_HANDLE</a> *llHdl, int32 ch, int32 *value)</td></tr>
+<tr><td>&nbsp;</td><td><em class="mdesc">Read a value from the device.</em> <a href="#a37"></a><em></em><br><br></td></tr>
+<tr><td nowrap align=right valign=top>int32&nbsp;</td><td valign=bottom><a class="el" href="f14__mon__drv_8c.html#a38">F14_MON_Write</a> (<a class="el" href="structLL__HANDLE.html">LL_HANDLE</a> *llHdl, int32 ch, int32 value)</td></tr>
+<tr><td>&nbsp;</td><td><em class="mdesc">Description: Write a value to the device.</em> <a href="#a38"></a><em></em><br><br></td></tr>
+<tr><td nowrap align=right valign=top>int32&nbsp;</td><td valign=bottom><a class="el" href="f14__mon__drv_8c.html#a39">F14_MON_SetStat</a> (<a class="el" href="structLL__HANDLE.html">LL_HANDLE</a> *llHdl, int32 ch, int32 code, INT32_OR_64 value32_or_64)</td></tr>
+<tr><td>&nbsp;</td><td><em class="mdesc">Set the driver status.</em> <a href="#a39"></a><em></em><br><br></td></tr>
+<tr><td nowrap align=right valign=top>int32&nbsp;</td><td valign=bottom><a class="el" href="f14__mon__drv_8c.html#a40">F14_MON_GetStat</a> (<a class="el" href="structLL__HANDLE.html">LL_HANDLE</a> *llHdl, int32 ch, int32 code, INT32_OR_64 *value32_or_64P)</td></tr>
+<tr><td>&nbsp;</td><td><em class="mdesc">Get the driver status.</em> <a href="#a40"></a><em></em><br><br></td></tr>
+<tr><td nowrap align=right valign=top>int32&nbsp;</td><td valign=bottom><a class="el" href="f14__mon__drv_8c.html#a41">F14_MON_BlockRead</a> (<a class="el" href="structLL__HANDLE.html">LL_HANDLE</a> *llHdl, int32 ch, void *buf, int32 size, int32 *nbrRdBytesP)</td></tr>
+<tr><td>&nbsp;</td><td><em class="mdesc">Read a data block from the device.</em> <a href="#a41"></a><em></em><br><br></td></tr>
+<tr><td nowrap align=right valign=top>int32&nbsp;</td><td valign=bottom><a class="el" href="f14__mon__drv_8c.html#a42">F14_MON_BlockWrite</a> (<a class="el" href="structLL__HANDLE.html">LL_HANDLE</a> *llHdl, int32 ch, void *buf, int32 size, int32 *nbrWrBytesP)</td></tr>
+<tr><td>&nbsp;</td><td><em class="mdesc">Write a data block from the device.</em> <a href="#a42"></a><em></em><br><br></td></tr>
+<tr><td nowrap align=right valign=top>int32&nbsp;</td><td valign=bottom><a class="el" href="f14__mon__drv_8c.html#a43">F14_MON_Irq</a> (<a class="el" href="structLL__HANDLE.html">LL_HANDLE</a> *llHdl)</td></tr>
+<tr><td>&nbsp;</td><td><em class="mdesc">Interrupt service routine.</em> <a href="#a43"></a><em></em><br><br></td></tr>
+<tr><td nowrap align=right valign=top>int32&nbsp;</td><td valign=bottom><a class="el" href="f14__mon__drv_8c.html#a44">F14_MON_Info</a> (int32 infoType,...)</td></tr>
+<tr><td>&nbsp;</td><td><em class="mdesc">Get information about hardware and driver requirements.</em> <a href="#a44"></a><em></em><br><br></td></tr>
+<tr><td nowrap align=right valign=top>char *&nbsp;</td><td valign=bottom><a class="el" href="f14__mon__drv_8c.html#a45">Ident</a> (void)</td></tr>
+<tr><td>&nbsp;</td><td><em class="mdesc">Return ident string.</em> <a href="#a45"></a><em></em><br><br></td></tr>
+<tr><td nowrap align=right valign=top>int32&nbsp;</td><td valign=bottom><a class="el" href="f14__mon__drv_8c.html#a46">Cleanup</a> (<a class="el" href="structLL__HANDLE.html">LL_HANDLE</a> *llHdl, int32 retCode)</td></tr>
+<tr><td>&nbsp;</td><td><em class="mdesc">Close all handles, free memory and return error code.</em> <a href="#a46"></a><em></em><br><br></td></tr>
+<tr><td nowrap align=right valign=top>void&nbsp;</td><td valign=bottom><a class="el" href="f14__mon__drv_8c.html#a47">__F14_MON_GetEntry</a> (LL_ENTRY *drvP)</td></tr>
+<tr><td>&nbsp;</td><td><em class="mdesc">Initialize driver's jump table.</em> <a href="#a47"></a><em></em><br><br></td></tr>
+<tr><td colspan=2><br><h2>Variables</h2></td></tr>
+<tr><td nowrap align=right valign=top>const char&nbsp;</td><td valign=bottom><a class="el" href="f14__mon__drv_8c.html#a34">IdentString</a> [] = MENT_XSTR(MAK_REVISION)</td></tr>
 </table>
 <hr><a name="_details"></a><h2>Detailed Description</h2>
 Low-level driver for F14/F15/F17/F18/D601 monitoring features.
 <p>
-<dl compact><dt><b>Author:</b></dt><dd><a href="mailto:alfred.jendrusch@men.de">alfred.jendrusch@men.de</a>, <a href="mailto:dieter.pfeuffer@men.de">dieter.pfeuffer@men.de</a> <dl compact><dt><b>Date</b></dt><dd>2009/08/31 12:17:53 </dd></dl>
-<dl compact><dt><b>Revision</b></dt><dd>1.5 </dd></dl>
-</dd></dl>
+<dl compact><dt><b>Author:</b></dt><dd><a href="mailto:alfred.jendrusch@men.de">alfred.jendrusch@men.de</a>, <a href="mailto:dieter.pfeuffer@men.de">dieter.pfeuffer@men.de</a></dd></dl>
 <p>
 Required: OSS, DESC, DBG, libraries<p>
 <dl compact><dt><b>Preprocessor Switches:</b></dt><dd>_ONE_NAMESPACE_PER_DRIVER_, WDOG, WDOG_ONLY</dd></dl>
@@ -948,7 +948,7 @@ wdog state
   </tr>
 </table>
 <hr><h2>Function Documentation</h2>
-<a name="a46" doxytag="f14_mon_drv.c::__F14_MON_GetEntry"></a><p>
+<a name="a47" doxytag="f14_mon_drv.c::__F14_MON_GetEntry"></a><p>
 <table width="100%" cellpadding="2" cellspacing="0" border="0">
   <tr>
     <td class="md">
@@ -984,7 +984,7 @@ Initialize driver's jump table.
     </td>
   </tr>
 </table>
-<a name="a45" doxytag="f14_mon_drv.c::Cleanup"></a><p>
+<a name="a46" doxytag="f14_mon_drv.c::Cleanup"></a><p>
 <table width="100%" cellpadding="2" cellspacing="0" border="0">
   <tr>
     <td class="md">
@@ -1032,7 +1032,7 @@ Close all handles, free memory and return error code.
     </td>
   </tr>
 </table>
-<a name="a40" doxytag="f14_mon_drv.c::F14_MON_BlockRead"></a><p>
+<a name="a41" doxytag="f14_mon_drv.c::F14_MON_BlockRead"></a><p>
 <table width="100%" cellpadding="2" cellspacing="0" border="0">
   <tr>
     <td class="md">
@@ -1101,7 +1101,7 @@ The function is not supported and always returns an ERR_LL_ILL_FUNC error.<p>
     </td>
   </tr>
 </table>
-<a name="a41" doxytag="f14_mon_drv.c::F14_MON_BlockWrite"></a><p>
+<a name="a42" doxytag="f14_mon_drv.c::F14_MON_BlockWrite"></a><p>
 <table width="100%" cellpadding="2" cellspacing="0" border="0">
   <tr>
     <td class="md">
@@ -1170,7 +1170,7 @@ The function is not supported and always returns an ERR_LL_ILL_FUNC error.<p>
     </td>
   </tr>
 </table>
-<a name="a35" doxytag="f14_mon_drv.c::F14_MON_Exit"></a><p>
+<a name="a36" doxytag="f14_mon_drv.c::F14_MON_Exit"></a><p>
 <table width="100%" cellpadding="2" cellspacing="0" border="0">
   <tr>
     <td class="md">
@@ -1208,7 +1208,7 @@ The function deinitializes the HW, the watchdog will be disabled.<p>
     </td>
   </tr>
 </table>
-<a name="a39" doxytag="f14_mon_drv.c::F14_MON_GetStat"></a><p>
+<a name="a40" doxytag="f14_mon_drv.c::F14_MON_GetStat"></a><p>
 <table width="100%" cellpadding="2" cellspacing="0" border="0">
   <tr>
     <td class="md">
@@ -1271,7 +1271,7 @@ The driver supports <a class="el" href="f14__mon__drv_8h.html#getstat_setstat_co
     </td>
   </tr>
 </table>
-<a name="a43" doxytag="f14_mon_drv.c::F14_MON_Info"></a><p>
+<a name="a44" doxytag="f14_mon_drv.c::F14_MON_Info"></a><p>
 <table width="100%" cellpadding="2" cellspacing="0" border="0">
   <tr>
     <td class="md">
@@ -1332,7 +1332,7 @@ The LL_INFO_LOCKMODE code returns which process locking mode the driver needs (L
     </td>
   </tr>
 </table>
-<a name="a34" doxytag="f14_mon_drv.c::F14_MON_Init"></a><p>
+<a name="a35" doxytag="f14_mon_drv.c::F14_MON_Init"></a><p>
 <table width="100%" cellpadding="2" cellspacing="0" border="0">
   <tr>
     <td class="md">
@@ -1409,7 +1409,7 @@ The function decodes <a class="el" href="index.html#descriptor_entries">these de
     </td>
   </tr>
 </table>
-<a name="a42" doxytag="f14_mon_drv.c::F14_MON_Irq"></a><p>
+<a name="a43" doxytag="f14_mon_drv.c::F14_MON_Irq"></a><p>
 <table width="100%" cellpadding="2" cellspacing="0" border="0">
   <tr>
     <td class="md">
@@ -1447,7 +1447,7 @@ The driver supports no interrupts and always returns LL_IRQ_DEVICE.<p>
     </td>
   </tr>
 </table>
-<a name="a36" doxytag="f14_mon_drv.c::F14_MON_Read"></a><p>
+<a name="a37" doxytag="f14_mon_drv.c::F14_MON_Read"></a><p>
 <table width="100%" cellpadding="2" cellspacing="0" border="0">
   <tr>
     <td class="md">
@@ -1502,7 +1502,7 @@ The function is not supported and always returns an ERR_LL_ILL_FUNC error.<p>
     </td>
   </tr>
 </table>
-<a name="a38" doxytag="f14_mon_drv.c::F14_MON_SetStat"></a><p>
+<a name="a39" doxytag="f14_mon_drv.c::F14_MON_SetStat"></a><p>
 <table width="100%" cellpadding="2" cellspacing="0" border="0">
   <tr>
     <td class="md">
@@ -1564,7 +1564,7 @@ The driver supports <a class="el" href="f14__mon__drv_8h.html#getstat_setstat_co
     </td>
   </tr>
 </table>
-<a name="a37" doxytag="f14_mon_drv.c::F14_MON_Write"></a><p>
+<a name="a38" doxytag="f14_mon_drv.c::F14_MON_Write"></a><p>
 <table width="100%" cellpadding="2" cellspacing="0" border="0">
   <tr>
     <td class="md">
@@ -1619,7 +1619,7 @@ The function is not supported and always returns an ERR_LL_ILL_FUNC error.<p>
     </td>
   </tr>
 </table>
-<a name="a44" doxytag="f14_mon_drv.c::Ident"></a><p>
+<a name="a45" doxytag="f14_mon_drv.c::Ident"></a><p>
 <table width="100%" cellpadding="2" cellspacing="0" border="0">
   <tr>
     <td class="md">
@@ -1651,6 +1651,29 @@ Return ident string.
     </td>
   </tr>
 </table>
+<hr><h2>Variable Documentation</h2>
+<a name="a34" doxytag="f14_mon_drv.c::IdentString"></a><p>
+<table width="100%" cellpadding="2" cellspacing="0" border="0">
+  <tr>
+    <td class="md">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top"> const char IdentString[] = MENT_XSTR(MAK_REVISION)<code> [static]</code>
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+    </td>
+  </tr>
+</table>
 
 	</div>
 </div>
@@ -1658,8 +1681,7 @@ Return ident string.
 <div class="footer">
 <!-- Footer -->
 	<p class="footer">
-	Generated for F14_MON MDIS Driver using <a href="http://www.doxygen.org">doxygen</a>.<br>
-	Copyright &copy; 2019 <a href="http://www.men.de">MEN Mikro Elektronik GmbH</a>. All Rights Reserved.
+	Generated for F14_MON MDIS Driver using <a href="http://www.doxygen.org">doxygen</a>. All Rights Reserved.
 	</p>
 </div>
 
