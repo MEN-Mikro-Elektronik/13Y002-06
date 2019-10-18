@@ -96,14 +96,6 @@
     The low-level driver initialization routine decodes only the general
 	descriptor entries ("keys").
 
-    \n \subsection f14_mon_min   Minimum descriptor
-    f14_mon_min.dsc, f14_mon_sc14_min.dsc (see Examples section)\n
-    Demonstrates the minimum set of options necessary for using the driver.
-
-    \n \subsection f14_mon_max   Maximum descriptor
-    f14_mon_max.dsc, f14_mon_sc14_max.dsc (see Examples section)\n
-    Shows all possible configuration options for this driver.
-
     \n \section codes F14_MON specific Getstat/Setstat codes
 	
 	For the watchdog functionality, the driver supports a subset of the WDOG
@@ -129,12 +121,6 @@
 
 /** \example f14_mon_simp.c */
 /** \example wdog_test.c */
-/** \example f14_mon_min.dsc */
-/** \example f14_mon_max.dsc */
-/** \example f14_mon_wdog_min.dsc */
-/** \example f14_mon_wdog_max.dsc */
-/** \example f14_mon_sc14_min.dsc */
-/** \example f14_mon_sc14_max.dsc */
 
 /*! \page f14dummy MEN logo
   \menimages
