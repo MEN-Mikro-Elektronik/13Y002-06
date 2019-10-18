@@ -8,10 +8,8 @@
     <docanchor>f14_mon_simp</docanchor>
     <docanchor>Variants</docanchor>
     <docanchor>wdog_test</docanchor>
-    <docanchor>f14_mon_min</docanchor>
     <docanchor>General</docanchor>
     <docanchor>programs</docanchor>
-    <docanchor>f14_mon_max</docanchor>
     <docanchor>api_functions</docanchor>
     <docanchor>FuncDesc</docanchor>
     <docanchor>channels</docanchor>

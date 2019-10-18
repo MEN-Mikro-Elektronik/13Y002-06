@@ -14,13 +14,7 @@ main="F14_MON MDIS Driver","index.hhc","index.hhk","index.html","index.html",,,,
 [FILES]
 index.html
 files.html
-f14__mon__max_8dsc-example.html
-f14__mon__min_8dsc-example.html
-f14__mon__sc14__max_8dsc-example.html
-f14__mon__sc14__min_8dsc-example.html
 f14__mon__simp_8c-example.html
-f14__mon__wdog__max_8dsc-example.html
-f14__mon__wdog__min_8dsc-example.html
 wdog__test_8c-example.html
 f14__mon__drv_8h-source.html
 wdog_8h-source.html
